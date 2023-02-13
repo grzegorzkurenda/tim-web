@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "e004698e-4587-4208-b71d-171a047a8965",
+		"name": "TIM-PROJEKT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"grzesio99\",\n    \"password\": \"grzesio99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get car",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJncnplc2lvOTkiLCJleHAiOjE2NzA2NzIxMzl9.WYhEIEKY_LUCPBoyju7zr67XK2H2Rw5CCyD-W7XTOc8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"page\": 1,\n    \"pageSize\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"grzesio99\",\n    \"name\": \"Grzegorz\",\n    \"surname\": \"Kurenda\",\n    \"email\": \"grzegorz@kurenda.pl\",\n    \"password\": \"grzesio99\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get car details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYW5pZWwiLCJleHAiOjE2NzAxODI3NTB9.Pc6vUD7KE2H0u-6lCTP5eL9tBEz1T1AWudAI0XjfizQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/car/55becb5a-3e0b-4076-ac6e-e6299baf68af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car",
+						"55becb5a-3e0b-4076-ac6e-e6299baf68af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYW5pZWwiLCJleHAiOjE2NzAxODI3NTB9.Pc6vUD7KE2H0u-6lCTP5eL9tBEz1T1AWudAI0XjfizQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/daniel/Downloads/7705ecbd-b4aa-4de6-8f19-d5f7063cae52.png"
+						},
+						{
+							"key": "make",
+							"value": "bmw",
+							"type": "default"
+						},
+						{
+							"key": "model",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "color",
+							"value": "black",
+							"type": "default"
+						},
+						{
+							"key": "engineSize",
+							"value": "1200",
+							"type": "default"
+						},
+						{
+							"key": "horsePower",
+							"value": "120",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"car"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

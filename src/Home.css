@@ -1,0 +1,22 @@
+.navbar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: 1px solid #a2a2a2;
+  }
+  .navbar h1 {
+    color:rgb(32,177,255);
+  }
+  .navbar .links {
+    margin-left: auto;
+  }
+  .navbar a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+    color: rgb(32,177,255);
+  }
+  .navbar a:hover {
+    color: rgba(32,177,255,0.7);
+  }

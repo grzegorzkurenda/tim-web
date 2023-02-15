@@ -28,7 +28,9 @@ const LoginForm  = (props) => {
               });
               
             console.log(response);
-            window.localStorage.setItem('token', response.data.token);
+            const { token } = response.data;
+            window.localStorage.setItem('token', token);
+            window.location.assign('/home');
             console.log(window.localStorage)
         } catch (error) {
             console.error(error);

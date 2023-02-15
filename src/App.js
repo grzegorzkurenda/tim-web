@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import Navbar from "./Navbar";
 
+
 function App() {
   const [currentForm, setCurrentForm] = useState('login')
 

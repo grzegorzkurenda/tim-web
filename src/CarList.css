@@ -1,0 +1,23 @@
+.car-list{
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px;;
+}
+
+.car-preview{
+    background-color: beige;
+    font-size: 24px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.car-preview p:last-child{
+    padding-bottom: 25px ;
+}
+h1{
+    padding-bottom: 15px;
+}
+p{
+   padding: 5px; 
+}
+

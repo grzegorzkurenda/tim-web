@@ -5,6 +5,8 @@ import RegisterForm from './components/registerform';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import Navbar from "./Navbar";
+import Create from './components/createform';
+import CarDetails from "./components/detailsform";
 
 
 function App() {
@@ -24,6 +26,14 @@ function App() {
           <Route path="/favorite">
             <Navbar/>
             <Home/>
+          </Route>
+          <Route path="/create">
+            <Navbar/>
+            <Create/>
+          </Route>
+          <Route path="/car/:id">
+            <Navbar/>
+            <CarDetails/>
           </Route>
         <Route path='/'>
           <div className="page">

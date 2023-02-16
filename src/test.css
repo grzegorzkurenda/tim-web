@@ -1,11 +1,11 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box
 }
 
-body,html {
+body,
+html {
     height: 100%;
     font-family: sans-serif
 }
@@ -19,14 +19,19 @@ a {
 }
 
 a:focus {
-    outline: none!important
+    outline: none !important
 }
 
 a:hover {
     text-decoration: none
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0
 }
 
@@ -34,7 +39,8 @@ p {
     margin: 0
 }
 
-ul,li {
+ul,
+li {
     margin: 0;
     list-style-type: none
 }
@@ -42,7 +48,7 @@ ul,li {
 input {
     display: block;
     outline: none;
-    border: none!important
+    border: none !important
 }
 
 textarea {
@@ -50,12 +56,13 @@ textarea {
     outline: none
 }
 
-textarea:focus,input:focus {
-    border-color: transparent!important
+textarea:focus,
+input:focus {
+    border-color: transparent !important
 }
 
 button {
-    outline: none!important;
+    outline: none !important;
     border: none;
     background: 0 0
 }
@@ -65,7 +72,7 @@ button:hover {
 }
 
 iframe {
-    border: none!important
+    border: none !important
 }
 
 .limiter {
@@ -77,10 +84,10 @@ iframe {
     width: 100%;
     min-height: 100vh;
     background: #c850c0;
-    background: -webkit-linear-gradient(45deg,#4158d0,#c850c0);
-    background: -o-linear-gradient(45deg,#4158d0,#c850c0);
-    background: -moz-linear-gradient(45deg,#4158d0,#c850c0);
-    background: linear-gradient(45deg,#4158d0,#c850c0);
+    background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+    background: linear-gradient(45deg, #4158d0, #c850c0);
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -111,7 +118,8 @@ table * {
     position: relative
 }
 
-table td,table th {
+table td,
+table th {
     padding-left: 8px
 }
 
@@ -128,19 +136,23 @@ table tbody tr:last-child {
     border: 0
 }
 
-table td,table th {
+table td,
+table th {
     text-align: left
 }
 
-table td.l,table th.l {
+table td.l,
+table th.l {
     text-align: right
 }
 
-table td.c,table th.c {
+table td.c,
+table th.c {
     text-align: center
 }
 
-table td.r,table th.r {
+table td.r,
+table th.r {
     text-align: center
 }
 
@@ -198,38 +210,50 @@ tbody tr:hover {
     text-align: right;
     padding-right: 62px
 }
+
 .containerBtnBig {
-    max-width: 280px;
+    border-radius: 100px;
     cursor: pointer;
-    display: flex; 
+    display: inline-flex;
     align-items: center;
     margin-bottom: 25px;
-    -webkit-user-select: none; /* Safari */
-     -ms-user-select: none; /* IE 10 and IE 11 */
-     user-select: none; /* Standard syntax */
-  }
+    padding: 8px;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
 
-.btn{
+.containerBtnBig:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
     height: 25px;
     width: 25px;
 }
 
-.btnBig{
+.btnBig {
     height: 65px;
     width: 65px;
 }
 
-.btnBigText{
+.btnBigText {
     padding-left: 15px;
     font-size: 36px;
 }
 
 @media screen and (max-width: 992px) {
     table {
-        display:block
+        display: block
     }
 
-    table>*,table tr,table td,table th {
+    table>*,
+    table tr,
+    table td,
+    table th {
         display: block
     }
 
@@ -243,7 +267,7 @@ tbody tr:hover {
     }
 
     table tbody tr td {
-        padding-left: 40%!important;
+        padding-left: 40% !important;
         margin-bottom: 24px
     }
 
@@ -287,11 +311,18 @@ tbody tr:hover {
         content: "Total"
     }
 
-    .column4,.column5,.column6 {
+    .column4,
+    .column5,
+    .column6 {
         text-align: left
     }
 
-    .column4,.column5,.column6,.column1,.column2,.column3 {
+    .column4,
+    .column5,
+    .column6,
+    .column1,
+    .column2,
+    .column3 {
         width: 100%
     }
 
@@ -302,7 +333,7 @@ tbody tr:hover {
 
 @media(max-width: 576px) {
     .container-table100 {
-        padding-left:15px;
+        padding-left: 15px;
         padding-right: 15px
     }
 }

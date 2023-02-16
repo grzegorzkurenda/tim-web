@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./createform.css"
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [make, setMake] = useState('');
@@ -9,6 +10,7 @@ const Create = () => {
   const [engineSize, setEngineSize] = useState('');
   const [horsePower, setHorsePower] = useState('');
   const [file, setFile] = useState({});
+  const history = useHistory();
 
   const fileToDataUri = (file) => new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -101,6 +103,7 @@ const Create = () => {
           required
           onChange={(e) => handleFileChange(e.target.files[0] || null)}
         />
+        <button onClick={() => { history.push('/home'); }}>Back</button>
         <button>Save</button>
       </form>
     </div>

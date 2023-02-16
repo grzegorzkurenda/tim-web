@@ -41,9 +41,9 @@ const CarList = ({ cars }) => {
                 {cars.map(car => (
                   <tr key={car.id} >
                     <td className="column1"><Link to={`/car/${car.id}`}>{car.model}</Link></td>
-                    <td className="column2"><Link to={`/car/${car.id}`}>{car.make}</Link></td>
-                    <td className="column3"><Link to={`/car/${car.id}`}>{car.horsePower}</Link></td>
-                    <td className="column4"><Link to={`/car/${car.id}`}>{car.engineSize}</Link></td>
+                    <td className="column2">{car.make}</td>
+                    <td className="column3">{car.horsePower}</td>
+                    <td className="column4">{car.engineSize}</td>
                     <td className="column5"><button onClick={() => edit(car.id)}><img className="btn" src={pen} alt="edit" /></button></td>
                     <td className="column6"><button onClick={() => remove(car.id)}><img className="btn" src={trash} alt="remove" /> </button></td>
                   </tr>

@@ -1,0 +1,35 @@
+.detail {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+}
+
+.detail label {
+    text-align: left;
+    display: block;
+    margin: 7px 20px auto;
+}
+
+.detail img {
+    max-width: 300px;
+    margin: 5px;
+}
+
+.detail h2 {
+    font-size: 20px;
+    color: rgb(32, 177, 255);
+    margin: 40px 0px 20px;
+}
+
+.detail button {
+    background: rgb(32, 177, 255);
+    color: #fff;
+    min-width: 80px;
+    border: 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}

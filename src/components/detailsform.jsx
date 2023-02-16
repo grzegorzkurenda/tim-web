@@ -1,33 +1,18 @@
 import { useParams } from "react-router-dom"
-import { useSelector } from 'react-redux'
-import { useEffect } from 'react';
+import useCar from "../getCar";
+import CarDetail from "./cardetails";
 
 const CarDetails = () => {
-    const token = useSelector((state) => state.token.token)
-
     const { id } = useParams();
-    const { car } = fetch('/api/car/' + id, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token.payload}`,
-            'Content-Type': 'application/json',
-        },
-    }).then((data) => {
-        console.log('get car')
-        console.log({ data })
-    })
-
+    const { error, isPending, data: car } = useCar(id)
+    // console.log(car)
+    // console.log(error)
+    // console.log(isPending)
     return (
         <div>
-            <label>Details</label>
-            <label>Make:{car.make}</label>
-            <label>model:{car.model}</label>
-            <label>color:{car.color}</label>
-            <label>engineSize:{car.engineSize}</label>
-            <label>horsePower:{car.horsePower}</label>
-            <label>photoURL:{car.photoUrl}</label>
-            <label>createDate:{car.createDate}</label>
-            <label>isUserFavourite:{car.isUserFavourite}</label>
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {car && <CarDetail car={car} />}
         </div>
     )
 }

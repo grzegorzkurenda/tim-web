@@ -43,7 +43,7 @@ const Create = () => {
     formData.append("engineSize", car.engineSize);
     formData.append("horsePower", car.horsePower);
 
-    fetch('http://localhost:8080/api/car', {
+    fetch('api/car', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${window.localStorage.getItem('token')}`

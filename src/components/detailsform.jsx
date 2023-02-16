@@ -1,16 +1,22 @@
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react';
 
-const CarDetails = () =>{
+const CarDetails = () => {
+    const token = useSelector((state) => state.token.token)
+
     const { id } = useParams();
-    const { car } = fetch('/api/car/'+ id, {
+    const { car } = fetch('/api/car/' + id, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${token.payload}`,
             'Content-Type': 'application/json',
-        }, 
-    }).then(()=>{
+        },
+    }).then((data) => {
         console.log('get car')
+        console.log({ data })
     })
+
     return (
         <div>
             <label>Details</label>
@@ -23,6 +29,7 @@ const CarDetails = () =>{
             <label>createDate:{car.createDate}</label>
             <label>isUserFavourite:{car.isUserFavourite}</label>
         </div>
-)}
+    )
+}
 
 export default CarDetails;

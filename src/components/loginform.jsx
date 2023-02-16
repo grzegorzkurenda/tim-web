@@ -8,12 +8,12 @@ import { save } from '../tokenSlice'
 import { useHistory } from "react-router-dom";
 
 
-const LoginForm  = (props) => {
+const LoginForm = (props) => {
     const [formValues, setFormValues] = useState({});
     const token = useSelector((state) => state.token.value)
     const dispatch = useDispatch()
     const history = useHistory();
-  
+
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -29,11 +29,11 @@ const LoginForm  = (props) => {
         const { userName, password } = formValues;
 
         try {
-            const response = await axios.post("http://localhost:8080/api/authentication",{
-                userName,    
+            const response = await axios.post("http://localhost:8080/api/authentication", {
+                userName,
                 password,
-              });
-              
+            });
+
             console.log(response);
             const { token } = response.data;
             window.localStorage.setItem('token', token);
@@ -53,10 +53,10 @@ const LoginForm  = (props) => {
             <input name='userName' onChange={handleChange} type="text" placeholder="username" />
             <label>Password</label>
             <input name='password' onChange={handleChange} type="password" placeholder="password" />
-            
+
             <button onClick={() => props.onFormSwitch('register')}>Don't have an account?</button>
             <button className="login-btn" type="submit" >Login</button>
-            
+
         </form>
     )
 }

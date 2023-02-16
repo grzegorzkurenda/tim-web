@@ -23,33 +23,32 @@ const Create = () => {
       setFile('');
       return;
     }
+    setFile(file)
 
-    fileToDataUri(file)
-      .then(dataUri => {
-        setFile(dataUri)
-      })
+    // fileToDataUri(file)
+    //   .then(dataUri => {
+    //     setFile(dataUri)
+    //   })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const car = { make, model, color, engineSize, horsePower };
+    var formData = new FormData();
 
-    fetch('/api/car', {
+    formData.append("file", file);
+    formData.append("make", car.make);
+    formData.append("model", car.model);
+    formData.append("color", car.color);
+    formData.append("engineSize", car.engineSize);
+    formData.append("horsePower", car.horsePower);
+
+    fetch('http://localhost:8080/api/car', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-        'Content-Type': 'multipart/form-data',
+        'Authorization': `Bearer ${window.localStorage.getItem('token')}`
       },
-      body: JSON.stringify({
-        'createCarDTO': {
-          'make': car.make,
-          'model': car.model,
-          'color': car.color,
-          'engineSize': Number(car.engineSize),
-          'horsePower': Number(car.horsePower),
-        },
-        // file,
-      }),
+      body: formData,
     }).then(() => {
       console.log('addd')
     })

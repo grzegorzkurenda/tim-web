@@ -14,13 +14,12 @@ const useGetCar = (id) => {
                 'Authorization': `Bearer ${token.payload}`,
             },
         }).then(res => {
-            if (!res.ok) { // error coming back from server
+            if (!res.ok) {
                 throw Error('could not fetch the data for that resource');
             }
             return res.json();
         })
             .then(data => {
-                // console.log({ data })
                 setIsPending(false);
                 setData(data || null);
                 setError(null);
@@ -29,11 +28,11 @@ const useGetCar = (id) => {
                 if (err.name === 'AbortError') {
                     console.log('fetch aborted')
                 } else {
-                    // auto catches network / connection error
                     setIsPending(false);
                     setError(err.message);
                 }
             })
+        // eslint-disable-next-line
     }, [])
 
     return { data, isPending, error };

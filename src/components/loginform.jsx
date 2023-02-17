@@ -13,7 +13,7 @@ const LoginForm = (props) => {
     const token = useSelector((state) => state.token.value)
     const dispatch = useDispatch()
     const history = useHistory();
-
+    console.log("login")
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -33,12 +33,9 @@ const LoginForm = (props) => {
                 userName,
                 password,
             });
-
-            // console.log(response);
             const { token } = response.data;
             window.localStorage.setItem('token', token);
             dispatch(save(token))
-            // console.log(window.localStorage)
             history.push('/home');
         } catch (error) {
             console.error(error);

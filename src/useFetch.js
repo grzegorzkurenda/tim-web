@@ -21,7 +21,6 @@ const useFetch = (url) => {
       return res.json();
     })
       .then(data => {
-        // console.log({ data })
         setIsPending(false);
         setData(data?.items || null);
         setError(null);
@@ -30,11 +29,11 @@ const useFetch = (url) => {
         if (err.name === 'AbortError') {
           console.log('fetch aborted')
         } else {
-          // auto catches network / connection error
           setIsPending(false);
           setError(err.message);
         }
       })
+    // eslint-disable-next-line
   }, [])
 
   return { data, isPending, error };

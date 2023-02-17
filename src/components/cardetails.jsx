@@ -1,6 +1,5 @@
 import "./cardetails.css"
 import { useHistory } from "react-router-dom";
-import { useCallback } from "react";
 import { useSelector } from 'react-redux'
 
 const CarDetail = (props) => {

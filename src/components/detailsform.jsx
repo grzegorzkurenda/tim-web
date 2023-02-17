@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
-import useCar from "../getCar";
+import useGetCar from "../useGetCar";
 import CarDetail from "./cardetails";
 
 const CarDetails = () => {
     const { id } = useParams();
-    const { error, isPending, data: car } = useCar(id)
+    const { error, isPending, data: car } = useGetCar(id)
     // console.log(car)
     // console.log(error)
     // console.log(isPending)

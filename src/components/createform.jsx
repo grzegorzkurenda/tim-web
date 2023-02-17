@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./createform.css"
-import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 const Create = () => {
@@ -12,25 +11,12 @@ const Create = () => {
   const [file, setFile] = useState({});
   const history = useHistory();
 
-  const fileToDataUri = (file) => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      resolve(event.target.result)
-    };
-    reader.readAsDataURL(file);
-  })
-
   const handleFileChange = (file) => {
     if (!file) {
       setFile('');
       return;
     }
     setFile(file)
-
-    // fileToDataUri(file)
-    //   .then(dataUri => {
-    //     setFile(dataUri)
-    //   })
   }
 
   const handleSubmit = (e) => {
@@ -52,11 +38,9 @@ const Create = () => {
       },
       body: formData,
     }).then(() => {
-      console.log('addd')
+      history.push('/home');
     })
   }
-
-  console.log({ file });
 
   return (
     <div className="create">
@@ -104,7 +88,7 @@ const Create = () => {
           onChange={(e) => handleFileChange(e.target.files[0] || null)}
         />
         <button onClick={() => { history.push('/home'); }}>Back</button>
-        <button>Save</button>
+        <button className="add">Save</button>
       </form>
     </div>
   );

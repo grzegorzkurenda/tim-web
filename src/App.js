@@ -13,7 +13,7 @@ function App() {
   const [currentForm, setCurrentForm] = useState('login')
   const token = useSelector((state) => state.token.token)
 
-  console.log(token);
+  // console.log(token);
 
   const toogleForm = (form) => {
     setCurrentForm(form)

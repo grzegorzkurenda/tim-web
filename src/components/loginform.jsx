@@ -34,11 +34,11 @@ const LoginForm = (props) => {
                 password,
             });
 
-            console.log(response);
+            // console.log(response);
             const { token } = response.data;
             window.localStorage.setItem('token', token);
             dispatch(save(token))
-            console.log(window.localStorage)
+            // console.log(window.localStorage)
             history.push('/home');
         } catch (error) {
             console.error(error);

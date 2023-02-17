@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 
-const useCar = (id) => {
+const useGetCar = (id) => {
     const token = useSelector((state) => state.token.token)
     const [data, setData] = useState([]);
     const [isPending, setIsPending] = useState(true);
@@ -39,4 +39,4 @@ const useCar = (id) => {
     return { data, isPending, error };
 }
 
-export default useCar;
+export default useGetCar;

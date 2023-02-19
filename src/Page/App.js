@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import LoginForm from './components/loginform';
-import RegisterForm from './components/registerform';
+import LoginForm from '../components/loginform';
+import RegisterForm from '../components/registerform';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import Edit from './Edit';
-import Create from './components/createform';
-import CarDetails from "./components/detailsform";
+import Create from '../components/createform';
+import CarDetails from "../components/detailsform";
 import { useSelector } from 'react-redux'
 
 function App() {

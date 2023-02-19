@@ -1,6 +1,6 @@
-import CarList from "./CarList";
+import CarList from "../components/carlist";
 import "./Home.css"
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 const Home = () => {
   const { error, isPending, data: cars } = useFetch('/api/car')

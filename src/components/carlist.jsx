@@ -1,8 +1,7 @@
 import { Link, useHistory } from "react-router-dom"
 
-// import "./test.css"
-import "./CarList.css"
-import plus from "./icon/plus.png"
+import "./carlist.css"
+import plus from "../icon/plus.png"
 
 const CarList = ({ cars }) => {
   const history = useHistory();

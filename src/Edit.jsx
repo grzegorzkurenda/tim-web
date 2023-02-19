@@ -4,7 +4,6 @@ import CarEdit from "./components/caredit";
 const Edit = () => {
     const { id } = useParams();
     const { error, isPending, data: car } = useGetCar(id)
-    console.log(id)
     return (
         <div>
             {error && <div>{error}</div>}

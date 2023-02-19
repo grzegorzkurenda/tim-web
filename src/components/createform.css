@@ -34,3 +34,8 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.create button:hover {
+  background: rgba(32, 177, 255, 0.7);
+
+}

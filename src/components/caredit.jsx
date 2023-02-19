@@ -42,6 +42,7 @@ const CarEdit = (props) => {
             <form onSubmit={handleSubmit}>
                 <label>Make:</label>
                 <input
+                    className="edit"
                     type="text"
                     required
                     value={make}
@@ -49,6 +50,7 @@ const CarEdit = (props) => {
                 />
                 <label>Model:</label>
                 <input
+                    className="edit"
                     type="text"
                     required
                     value={model}
@@ -56,6 +58,7 @@ const CarEdit = (props) => {
                 />
                 <label>Color:</label>
                 <input
+                    className="edit"
                     type="text"
                     required
                     value={color}
@@ -63,6 +66,7 @@ const CarEdit = (props) => {
                 />
                 <label>EngineSize:</label>
                 <input
+                    className="edit"
                     type="number"
                     required
                     value={engineSize}
@@ -70,6 +74,7 @@ const CarEdit = (props) => {
                 />
                 <label>HorsePower:</label>
                 <input
+                    className="edit"
                     type="number"
                     required
                     value={horsePower}

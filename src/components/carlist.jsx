@@ -26,7 +26,7 @@ const CarList = ({ cars }) => {
               </tr>
             </thead>
             <tbody>
-              {cars.map(car => (
+              {cars && cars.map(car => (
                 <tr key={car.id} >
                   <td className="column1"><Link to={`/car/${car.id}`}>{car.model}</Link></td>
                   <td className="column2"><Link to={`/car/${car.id}`}>{car.make}</Link></td>

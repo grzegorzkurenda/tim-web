@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "./createform.css"
+import { useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import "./createform.css"
 
 const Create = () => {
   const [make, setMake] = useState('');
@@ -10,6 +11,7 @@ const Create = () => {
   const [horsePower, setHorsePower] = useState('');
   const [file, setFile] = useState({});
   const history = useHistory();
+  const token = useSelector((state) => state.token.token)
 
   const handleFileChange = (file) => {
     if (!file) {
@@ -34,7 +36,7 @@ const Create = () => {
     fetch('api/car', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${window.localStorage.getItem('token')}`
+        'Authorization': `Bearer ${token.payload}`,
       },
       body: formData,
     }).then(() => {

@@ -33,3 +33,9 @@
     cursor: pointer;
     margin: 10px;
 }
+
+.detail .fav {
+    background: none;
+    color: none;
+    width: 40px;
+}

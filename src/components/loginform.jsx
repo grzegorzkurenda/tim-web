@@ -13,7 +13,6 @@ const LoginForm = (props) => {
     const token = useSelector((state) => state.token.value)
     const dispatch = useDispatch()
     const history = useHistory();
-    console.log("login")
     const handleChange = (e) => {
         const { name, value } = e.target;
 

@@ -4,7 +4,6 @@ import useFetch from "./useFetch";
 
 const Home = () => {
   const { error, isPending, data: cars } = useFetch('/api/car')
-  console.log('Home')
   return (
     <div className="home">
       {error && <div>{error}</div>}

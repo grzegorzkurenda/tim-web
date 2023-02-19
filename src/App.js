@@ -5,6 +5,7 @@ import RegisterForm from './components/registerform';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Navbar from "./Navbar";
+import Edit from './Edit';
 import Create from './components/createform';
 import CarDetails from "./components/detailsform";
 import { useSelector } from 'react-redux'
@@ -13,8 +14,6 @@ function App() {
   const [currentForm, setCurrentForm] = useState('login')
   const token = useSelector((state) => state.token.token)
 
-  console.log(currentForm)
-  console.log('app')
   const toogleForm = (form) => {
     setCurrentForm(form)
   }
@@ -39,6 +38,10 @@ function App() {
             <Route path="/car/:id">
               <Navbar />
               <CarDetails />
+            </Route>
+            <Route path="/edit/:id">
+              <Navbar />
+              <Edit />
             </Route>
           </>
         ) : null}
